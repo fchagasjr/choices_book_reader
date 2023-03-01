@@ -31,21 +31,15 @@ class AdventureBook
   end
 
   def handle_input(input)
-    if input.nil?
-      exit
-    else
-      @page = Story.page(input)
-    end
+    exit if input.nil?
+    @page = Story.page(input)
   end
 
   def build_menu
     page.options.each do |option|
-      case option.first
-      when "y"
-        puts "[y] YES"
-      when "n"
-        puts "[n] NO"
-      end
+      option_letter = option.first
+      option_text = Story.options[option_letter]
+      puts "[#{option_letter}] #{option_text}"
     end
     puts "[x] EXIT"
  end
