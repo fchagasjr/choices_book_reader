@@ -57,6 +57,10 @@ class App
       "n" => "no",
       "x" => "exit"
     }
+    get_option(options)
+  end
+
+  def get_option(options)
     options.each do |option, action|
       puts "[#{option}] #{action}"
     end
