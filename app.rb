@@ -46,11 +46,15 @@ class App
 
   def read_book
     while true
-      system("clear")
-      puts STORY[page]
+      display_current_page
       input = get_user_choice
       handle_input(input)
     end
+  end
+
+  def display_current_page
+    system("clear")
+    puts STORY[page]
   end
 
   def get_user_choice
