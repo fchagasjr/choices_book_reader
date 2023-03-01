@@ -48,7 +48,7 @@ class Story
     }
   }
 
-    def self.page(number)
+    def self.page(number = 1)
       page_text = PAGES[number][:text]
       page_options = PAGES[number][:options]
       Page.new(page_text, page_options)
