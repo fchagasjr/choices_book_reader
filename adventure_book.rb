@@ -43,11 +43,11 @@ class AdventureBook
 
   def display_current_page
     system("clear")
-    puts page[:text]
+    puts page.text
   end
 
   def get_user_choice
-    options = page[:options]
+    options = page.options
     Input.get_option(options)
   end
 

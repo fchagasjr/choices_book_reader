@@ -1,4 +1,6 @@
 class Story
+  Page = Struct.new(:text, :options)
+
   PAGES = {
     fix_me:{
       text:
@@ -47,6 +49,8 @@ class Story
   }
 
     def self.page(number)
-      PAGES[number]
+      page_text = PAGES[number][:text]
+      page_options = PAGES[number][:options]
+      Page.new(page_text, page_options)
     end
 end
