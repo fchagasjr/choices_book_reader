@@ -1,7 +1,7 @@
 require 'io/console'
 require_relative 'input'
 
-class App
+class AdventureBook
   STORY = [
     "Welcome to your story! Bad news: You're a frog!
     Long story short, a beatiful woman approaches the pond,
@@ -30,7 +30,7 @@ class App
     @page = 0
   end
 
-  def read_book
+  def read
     while true
       display_current_page
       input = get_user_choice
@@ -74,4 +74,4 @@ class App
   end
 end
 
-App.new.read_book
+AdventureBook.new.read
