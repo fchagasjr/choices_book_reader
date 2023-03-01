@@ -29,6 +29,28 @@ class App
     @page = 0
   end
 
+  def read_book
+    while true
+      display_current_page
+      input = get_user_choice
+      handle_input(input)
+    end
+  end
+
+  private
+
+  def display_current_page
+    system("clear")
+    puts STORY[page]
+  end
+
+  def get_user_choice
+    input = user_input
+    puts "#{input}"
+    sleep(2)
+    input
+  end
+
   def user_input
     options = {
       "y" => "yes",
@@ -42,26 +64,6 @@ class App
       option = STDIN.getch
       return options[option] if options.keys.include?(option)
     end
-  end
-
-  def read_book
-    while true
-      display_current_page
-      input = get_user_choice
-      handle_input(input)
-    end
-  end
-
-  def display_current_page
-    system("clear")
-    puts STORY[page]
-  end
-
-  def get_user_choice
-    input = user_input
-    puts "#{input}"
-    sleep(2)
-    input
   end
 
   def handle_input(input)
