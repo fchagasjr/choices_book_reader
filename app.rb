@@ -1,4 +1,5 @@
 require 'io/console'
+require_relative 'input'
 
 class App
   STORY = [
@@ -57,18 +58,9 @@ class App
       "n" => "no",
       "x" => "exit"
     }
-    get_option(options)
+    Input.get_option(options)
   end
 
-  def get_option(options)
-    options.each do |option, action|
-      puts "[#{option}] #{action}"
-    end
-    while true
-      option = STDIN.getch
-      return options[option] if options.keys.include?(option)
-    end
-  end
 
   def handle_input(input)
     case input
