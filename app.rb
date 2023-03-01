@@ -51,14 +51,18 @@ class App
       input = user_input
       puts "#{input}"
       sleep(2)
-      case input
-      when "yes"
-        @page += 1
-      when "no"
-        @page = 0
-      when "exit"
-        break
-      end
+      handle_input(input)
+    end
+  end
+
+  def handle_input(input)
+    case input
+    when "yes"
+      @page += 1
+    when "no"
+      @page = 0
+    when "exit"
+      exit
     end
   end
 end
