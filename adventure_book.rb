@@ -1,5 +1,6 @@
 require 'io/console'
 require_relative 'input'
+require_relative 'story'
 
 class AdventureBook
   STORY = [
@@ -27,7 +28,7 @@ class AdventureBook
   attr_reader :page
 
   def initialize
-    @page = 0
+    @page = Story.page(1)
   end
 
   def read
@@ -42,34 +43,19 @@ class AdventureBook
 
   def display_current_page
     system("clear")
-    puts STORY[page]
+    puts page[:text]
   end
 
   def get_user_choice
-    input = user_input
-    puts "#{input}"
-    sleep(2)
-    input
-  end
-
-  def user_input
-    options = {
-      "y" => "yes",
-      "n" => "no",
-      "x" => "exit"
-    }
+    options = page[:options]
     Input.get_option(options)
   end
 
-
   def handle_input(input)
-    case input
-    when "yes"
-      @page += 1
-    when "no"
-      @page = 0
-    when "exit"
+    if input.nil?
       exit
+    else
+      @page = Story.page(input)
     end
   end
 end
