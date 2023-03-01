@@ -48,11 +48,16 @@ class App
     while true
       system("clear")
       puts STORY[page]
-      input = user_input
-      puts "#{input}"
-      sleep(2)
+      input = get_user_choice
       handle_input(input)
     end
+  end
+
+  def get_user_choice
+    input = user_input
+    puts "#{input}"
+    sleep(2)
+    input
   end
 
   def handle_input(input)
