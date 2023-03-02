@@ -1,0 +1,108 @@
+---
+1:
+  text: |+
+    Welcome to your story! Bad news: You're a frog!
+    Long story short, a beatiful woman approaches the pond, somehow grab you and try to kiss you.
+
+    Do you allowed her to kiss?
+
+  options:
+    y: 3
+    n: 2
+2:
+  text: |+
+    Okay, you escape the kiss and jump back into the pond and swim away.
+    You look back and see the next frog she grab got kissed.
+    It turned into a man! You eat a fly.
+
+    THE END
+
+  options: {}
+3:
+  text: |+
+    She kisses you and you start feeling something wierd.
+    Your body streched and you realize you became human.
+    The woman claim to be a princess and request you to follow her.
+
+    Do you accept her request?
+
+  options:
+    y: 4
+    n: 5
+4:
+  text: |+
+    You follow her, but on the first opportunity she stunts you.
+    She is no princess, she is a witch who works as slave trader on the weekends.
+    No happy ending for you. Just a lot of unpaid work.
+
+    THE END
+
+  options: {}
+5:
+  text: |+
+    You don't take orders from frogs or people you just met.
+    You walk away and not far from there you find a small town.
+
+    Do you enter in the town?
+
+  options:
+    y: 6
+    n: 7
+6:
+  text: |+
+    You try to ask where you are to the first person you see.
+    But before that, the guards arrest you and lock you in the dungeon for life.
+    You've been naked the whole time and apparently this is crime.
+
+    THE END
+
+  options: {}
+7:
+  text: |+
+    You cross path with some monks that wondered why you're naked.
+    They give you some food and clothes and offer you to follow them.
+
+    Do you accept the offer?
+
+  options:
+    y: 8
+    n: 9
+8:
+  text: |+
+    You follow them to their monastery.
+    They teach you their way of living and you live a long and quite life.
+    They have frog legs on Wednesdays for lunch. You decide never to give a try.
+
+    THE END
+
+  options: {}
+9:
+  text: |+
+    You decide to create your own path.
+    You learn how to live in the woods by yourself and build a nice cozy cabin.
+    One day you see a strange person wondering the vicinities.
+
+    Do you try to make contact?
+
+  options:
+    y: 10
+    n: 11
+10:
+  text: |+
+    The person end up to be a woman who got lost in the woods.
+    She spent some time in your cabin and you both fell in love.
+    You have a cute baby with greenish skin one year later.
+
+    THE END
+
+  options: {}
+11:
+  text: |+
+    That was the last time you saw a person.
+    You spent the rest of your life in solitude.
+    Somedays you still regret that kiss.
+
+    THE END
+
+  options: {}
+...

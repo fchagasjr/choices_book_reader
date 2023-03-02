@@ -36,10 +36,9 @@ class AdventureBook
   end
 
   def build_menu
-    page.options.each do |option|
-      option_letter = option.first
-      option_text = Story.options[option_letter]
-      puts "[#{option_letter}] #{option_text}"
+    page.options.each do |letter, _|
+      option_text = Story.options[letter]
+      puts "[#{letter}] #{option_text}"
     end
     puts "[x] EXIT"
  end
