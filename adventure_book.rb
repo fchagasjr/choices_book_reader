@@ -31,7 +31,6 @@ class AdventureBook
   end
 
   def handle_input(input)
-    exit if input.nil?
     @page = Story.page(input)
   end
 
