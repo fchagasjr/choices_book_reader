@@ -1,11 +1,11 @@
 require 'io/console'
 require_relative 'input'
-require_relative 'story'
+require_relative 'choices_book'
 
-class AdventureBook
+class ChoicesBookReader
   attr_reader :book
 
-  def initialize(book_template = Story)
+  def initialize(book_template = ChoicesBook)
     @book = book_template.new
   end
 
@@ -31,4 +31,4 @@ class AdventureBook
   end
 end
 
-AdventureBook.new.read
+ChoicesBookReader.new.read

@@ -1,6 +1,6 @@
 require 'yaml/store'
 
-class Story
+class ChoicesBook
   attr_reader :actual_page, :pages
 
   def initialize(book: "book.yml")
