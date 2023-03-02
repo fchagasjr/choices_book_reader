@@ -3,6 +3,11 @@ require 'yaml/store'
 Page = Struct.new(:text, :options)
 
 class Story
+  @options = {
+    "y" => "YES",
+    "n" => "NO"
+  }
+
   attr_reader :pages
 
   def self.page(number = 1)
@@ -23,10 +28,6 @@ class Story
   end
 
   def self.options
-    {
-      "y" => "YES",
-      "n" => "NO"
-    }
+    @options
   end
-
 end
