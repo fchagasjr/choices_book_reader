@@ -1,4 +1,7 @@
 ---
+menu_options:
+  y: true
+  n: false
 0:
   text: |+
     ___      _

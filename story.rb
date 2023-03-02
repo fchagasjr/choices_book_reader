@@ -1,13 +1,11 @@
 require 'yaml/store'
 
-
 class Story
-  attr_reader :actual_page, :pages, :menu_options
+  attr_reader :actual_page, :pages
 
   def initialize(book: "book.yml")
     @pages = YAML::Store.new(book)
     @actual_page = 0
-    @menu_options = { "y" => "YES", "n" => "NO"}
   end
 
   def change_page(number)
@@ -34,5 +32,13 @@ class Story
       puts "[#{letter}] #{option_text}"
     end
     puts "[x] EXIT"
+  end
+
+  private
+
+  def menu_options
+    pages.transaction do
+      available_options = pages["menu_options"]
+    end
   end
 end
