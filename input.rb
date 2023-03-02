@@ -7,6 +7,7 @@ class Input
         return options[chosen_option]
 
       elsif chosen_option == "x"
+        system("clear")
         exit
       end
     end

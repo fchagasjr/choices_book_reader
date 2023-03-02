@@ -12,8 +12,8 @@ class AdventureBook
   def read
     while true
       display_current_page
-      input = get_user_choice
-      handle_input(input)
+      next_page = get_user_choice
+      @page = Story.page(next_page)
     end
   end
 
@@ -28,10 +28,6 @@ class AdventureBook
   def get_user_choice
     options = page.options
     Input.get_option(options)
-  end
-
-  def handle_input(input)
-    @page = Story.page(input)
   end
 
   def build_menu
