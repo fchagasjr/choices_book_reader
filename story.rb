@@ -2,33 +2,37 @@ require 'yaml/store'
 
 
 class Story
-  Page = Struct.new(:text, :options)
-
-  @options = {
-    "y" => "YES",
-    "n" => "NO"
-  }
-
-  attr_reader :pages
-
-  def self.page(number = 0)
-    new.page(number)
-  end
+  attr_reader :actual_page, :pages, :menu_options
 
   def initialize(book: "book.yml")
     @pages = YAML::Store.new(book)
+    @actual_page = 0
+    @menu_options = { "y" => "YES", "n" => "NO"}
   end
 
-  def page(number)
+  def change_page(number)
+    @actual_page = number
+  end
+
+  def text
     pages.transaction do
-      actual_page = pages[number]
-      page_text = actual_page['text']
-      page_options = actual_page['options']
-      Page.new(page_text, page_options)
+      page = pages[actual_page]
+      page['text']
     end
   end
 
-  def self.options
-    @options
+  def options
+    pages.transaction do
+      page = pages[actual_page]
+      page['options']
+    end
+  end
+
+  def build_menu
+    options.each do |letter, _|
+      option_text = menu_options[letter]
+      puts "[#{letter}] #{option_text}"
+    end
+    puts "[x] EXIT"
   end
 end

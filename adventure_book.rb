@@ -3,18 +3,17 @@ require_relative 'input'
 require_relative 'story'
 
 class AdventureBook
-  attr_reader :page, :story_template
+  attr_reader :book
 
-  def initialize(story_template = Story)
-    @story_template = story_template
-    @page = story_template.page
+  def initialize(book_template = Story)
+    @book = book_template.new
   end
 
   def read
     while true
       display_current_page
       next_page = get_user_choice
-      @page = story_template.page(next_page)
+      @book.change_page(next_page)
     end
   end
 
@@ -22,22 +21,14 @@ class AdventureBook
 
   def display_current_page
     system("clear")
-    puts page.text
-    build_menu
+    puts book.text
+    book.build_menu
   end
 
   def get_user_choice
-    options = page.options
+    options = book.options
     Input.get_option(options)
   end
-
-  def build_menu
-    page.options.each do |letter, _|
-      option_text = story_template.options[letter]
-      puts "[#{letter}] #{option_text}"
-    end
-    puts "[x] EXIT"
- end
 end
 
 AdventureBook.new.read
