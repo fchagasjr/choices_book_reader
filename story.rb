@@ -1,8 +1,9 @@
 require 'yaml/store'
 
-Page = Struct.new(:text, :options)
 
 class Story
+  Page = Struct.new(:text, :options)
+
   @options = {
     "y" => "YES",
     "n" => "NO"
@@ -14,8 +15,8 @@ class Story
     new.page(number)
   end
 
-  def initialize
-    @pages = YAML::Store.new("book.yml")
+  def initialize(book: "book.yml")
+    @pages = YAML::Store.new(book)
   end
 
   def page(number)
