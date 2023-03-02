@@ -1,7 +1,7 @@
 ---
 menu_options:
-  y: true
-  n: false
+  y: 'YES'
+  n: 'NO'
 0:
   text: |+
     ___      _
