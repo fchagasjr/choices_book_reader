@@ -1,6 +1,9 @@
 ---
 0:
-  text: |
+  text: |+
+    ___      _
+     |  |_| |_
+     |  | | |_
     ________   _______    _______    ______
     |          |      |  |       |  |
     |          |      |  |       |  |
@@ -8,33 +11,34 @@
     |          |    \    |       |  |       |
     |          |     \   |_______|  |_______|
 
-    Do you want to open the book?
+    Open the book?
+
   options:
     y: 1
 1:
   text: |+
     Welcome to your story! Bad news: You're a frog!
-    Long story short, a beatiful woman approaches the pond, somehow grab you and try to kiss you.
+    Long story short, a beautiful woman approaches the pond, somehow grabs you and tries to kiss you.
 
-    Do you allowed her to kiss?
+    Do you allow her to kiss?
 
   options:
     y: 3
     n: 2
 2:
   text: |+
-    Okay, you escape the kiss and jump back into the pond and swim away.
+    Okay, you escape the kiss, jump back into the pond, and swim away.
     You look back and see the next frog she grab got kissed.
-    It turned into a man! You eat a fly.
+    It turned into a man while you eat a fly.
 
     THE END
 
   options: {}
 3:
   text: |+
-    She kisses you and you start feeling something wierd.
-    Your body streched and you realize you became human.
-    The woman claim to be a princess and request you to follow her.
+    She kisses you and you start feeling something weird.
+    Your body is stretched and you realize you became human.
+    The woman claims to be a princess and requests you to follow her.
 
     Do you accept her request?
 
@@ -43,8 +47,8 @@
     n: 5
 4:
   text: |+
-    You follow her, but on the first opportunity she stunts you.
-    She is no princess, she is a witch who works as slave trader on the weekends.
+    You follow her, but on the first opportunity, she stunts you.
+    She is no princess, she is a witch who works as a slave trader on the weekends.
     No happy ending for you. Just a lot of unpaid work.
 
     THE END
@@ -53,9 +57,9 @@
 5:
   text: |+
     You don't take orders from frogs or people you just met.
-    You walk away and not far from there you find a small town.
+    You walk away and not far from there, you find a small town.
 
-    Do you enter in the town?
+    Do you enter the town?
 
   options:
     y: 6
@@ -64,14 +68,14 @@
   text: |+
     You try to ask where you are to the first person you see.
     But before that, the guards arrest you and lock you in the dungeon for life.
-    You've been naked the whole time and apparently this is crime.
+    You've been naked the whole time, and this is a crime.
 
     THE END
 
   options: {}
 7:
   text: |+
-    You cross path with some monks that wondered why you're naked.
+    You cross paths with some monks that wondered why you're naked.
     They give you some food and clothes and offer you to follow them.
 
     Do you accept the offer?
@@ -82,8 +86,8 @@
 8:
   text: |+
     You follow them to their monastery.
-    They teach you their way of living and you live a long and quite life.
-    They have frog legs on Wednesdays for lunch. You decide never to give a try.
+    They teach you their way of living and you live a long and quiet life.
+    They have frog legs on Wednesdays for lunch. You decide never to give it a try.
 
     THE END
 
@@ -92,7 +96,7 @@
   text: |+
     You decide to create your own path.
     You learn how to live in the woods by yourself and build a nice cozy cabin.
-    One day you see a strange person wondering the vicinities.
+    One day you see a strange person wondering about the vicinities.
 
     Do you try to make contact?
 
@@ -101,7 +105,7 @@
     n: 11
 10:
   text: |+
-    The person end up to be a woman who got lost in the woods.
+    The person ends up being a woman who got lost in the woods.
     She spent some time in your cabin and you both fell in love.
     You have a cute baby with greenish skin one year later.
 
