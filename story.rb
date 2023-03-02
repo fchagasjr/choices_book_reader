@@ -10,7 +10,7 @@ class Story
 
   attr_reader :pages
 
-  def self.page(number = 1)
+  def self.page(number = 0)
     new.page(number)
   end
 

@@ -1,4 +1,16 @@
 ---
+0:
+  text: |
+    ________   _______    _______    ______
+    |          |      |  |       |  |
+    |          |      |  |       |  |
+    |_____     |______|  |       |  |     ___
+    |          |    \    |       |  |       |
+    |          |     \   |_______|  |_______|
+
+    Do you want to open the book?
+  options:
+    y: 1
 1:
   text: |+
     Welcome to your story! Bad news: You're a frog!
