@@ -8,7 +8,7 @@ class ChoicesBook
     @actual_page = 0
   end
 
-  def change_page(number)
+  def to_page(number)
     @actual_page = number
   end
 
@@ -27,11 +27,11 @@ class ChoicesBook
   end
 
   def build_menu
-    options.each do |letter, _|
-      option_text = menu_options[letter]
-      puts "[#{letter}] #{option_text}"
+    options.keys.each do |option|
+      option_letter = option[0].downcase
+      puts "[#{option_letter}] #{option.upcase}"
     end
-    puts "[x] EXIT"
+    puts "\n[x] EXIT"
   end
 
   private

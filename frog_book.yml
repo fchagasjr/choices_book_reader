@@ -1,7 +1,7 @@
 ---
 menu_options:
-  y: 'YES'
-  n: 'NO'
+  'yes': 'YES'
+  'no': 'NO'
 0:
   text: |+
     ___      _
@@ -17,7 +17,7 @@ menu_options:
     Open the book?
 
   options:
-    y: 1
+    'yes': 1
 1:
   text: |+
     Welcome to your story! Bad news: You're a frog!
@@ -26,8 +26,8 @@ menu_options:
     Do you allow her to kiss?
 
   options:
-    y: 3
-    n: 2
+    'yes': 3
+    'no': 2
 2:
   text: |+
     Okay, you escape the kiss, jump back into the pond, and swim away.
@@ -46,8 +46,8 @@ menu_options:
     Do you accept her request?
 
   options:
-    y: 4
-    n: 5
+    'yes': 4
+    'no': 5
 4:
   text: |+
     You follow her, but on the first opportunity, she stunts you.
@@ -65,8 +65,8 @@ menu_options:
     Do you enter the town?
 
   options:
-    y: 6
-    n: 7
+    'yes': 6
+    'no': 7
 6:
   text: |+
     You try to ask where you are to the first person you see.
@@ -84,8 +84,8 @@ menu_options:
     Do you accept the offer?
 
   options:
-    y: 8
-    n: 9
+    'yes': 8
+    'no': 9
 8:
   text: |+
     You follow them to their monastery.
@@ -104,8 +104,8 @@ menu_options:
     Do you try to make contact?
 
   options:
-    y: 10
-    n: 11
+    'yes': 10
+    'no': 11
 10:
   text: |+
     The person ends up being a woman who got lost in the woods.
