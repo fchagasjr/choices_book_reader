@@ -11,10 +11,9 @@
     |          |    \    |       |  |       |
     |          |     \   |_______|  |_______|
 
-    Open the book?
 
   options:
-    'yes': 1
+    open the book: 1
 1:
   text: |+
     Welcome to your story! Bad news: You're a frog!
