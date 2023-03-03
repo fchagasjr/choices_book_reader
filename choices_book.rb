@@ -33,12 +33,4 @@ class ChoicesBook
     end
     puts "\n[x] EXIT"
   end
-
-  private
-
-  def menu_options
-    pages.transaction do
-      available_options = pages["menu_options"]
-    end
-  end
 end
