@@ -1,9 +1,9 @@
 class Input
+  attr_reader :available_options
+
   def self.get_option(options)
     new(options).get_option
   end
-
-  attr_reader :available_options
 
   def initialize(options)
     @available_options = handle_options(options)

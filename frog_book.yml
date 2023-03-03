@@ -32,7 +32,8 @@
 
     THE END
 
-  options: {}
+  options:
+    back to cover: 0
 3:
   text: |+
     She kisses you and you start feeling something weird.
@@ -52,7 +53,8 @@
 
     THE END
 
-  options: {}
+  options:
+    back to cover: 0
 5:
   text: |+
     You don't take orders from frogs or people you just met.
@@ -71,7 +73,8 @@
 
     THE END
 
-  options: {}
+  options:
+    back to cover: 0
 7:
   text: |+
     You cross paths with some monks that wondered why you're naked.
@@ -90,7 +93,8 @@
 
     THE END
 
-  options: {}
+  options:
+    back to cover: 0
 9:
   text: |+
     You decide to create your own path.
@@ -110,7 +114,8 @@
 
     THE END
 
-  options: {}
+  options:
+    back to cover: 0
 11:
   text: |+
     That was the last time you saw a person.
@@ -119,5 +124,6 @@
 
     THE END
 
-  options: {}
+  options:
+    back to cover: 0
 ...
