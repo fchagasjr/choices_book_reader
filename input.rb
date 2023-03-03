@@ -62,6 +62,7 @@ class TestInput < Input
   end
 
   def exit_application
+    puts "End of testing\nExiting application\n\n"
     exit
   end
 
