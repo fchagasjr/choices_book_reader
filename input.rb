@@ -12,13 +12,17 @@ class Input
   def get_option
     output = nil
     until output
-      chosen_option = STDIN.getch
+      chosen_option = get_key
       output = handle_output(chosen_option)
     end
     output
   end
 
   private
+
+  def get_key
+    STDIN.getch
+  end
 
   def handle_options(options)
     options.each_with_object({}) do |option, characters|
@@ -31,9 +35,47 @@ class Input
     if available_options.keys.include?(chosen_option)
       available_options[chosen_option]
     elsif chosen_option == "x"
-      system("clear")
-      exit
+      exit_application
     end
+  end
+
+  def exit_application
+    system("clear")
+    exit
   end
 end
 
+class TestInput < Input
+  class << self
+    attr_accessor :test_runs
+  end
+
+  @test_runs = 0
+
+  private
+
+  def get_key
+    sleep(2)
+    pressed_key = test_keys.sample
+    puts "Pressed key:[#{pressed_key}]\n\n"
+    pressed_key
+  end
+
+  def exit_application
+    exit
+  end
+
+  def test_keys
+    self.class.test_runs += 1
+    puts "\nTest:#{self.class.test_runs}"
+    available_test_keys
+  end
+
+  def available_test_keys
+    if self.class.test_runs > 2
+      ["x"] + available_options.keys
+    else
+      available_options.keys
+    end
+  end
+end
