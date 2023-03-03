@@ -1,1 +1,5 @@
-ruby choices_book_reader.rb
+#!/usr/bin/ruby
+
+require_relative 'choices_book_reader'
+
+ChoicesBookReader.new.read

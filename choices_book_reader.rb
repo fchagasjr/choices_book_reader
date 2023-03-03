@@ -39,4 +39,6 @@ class ChoicesBookReader
   end
 end
 
-ChoicesBookReader.new.read
+if __FILE__==$0
+  ChoicesBookReader.new.read
+end
