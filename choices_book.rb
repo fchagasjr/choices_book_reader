@@ -3,8 +3,8 @@ require 'yaml/store'
 class ChoicesBook
   attr_reader :actual_page, :pages
 
-  def initialize(book: "frog_book.yml")
-    @pages = YAML::Store.new(book)
+  def initialize(book_file_path)
+    @pages = YAML::Store.new(book_file_path)
     @actual_page = 0
   end
 

@@ -5,8 +5,8 @@ require_relative 'choices_book'
 class ChoicesBookReader
   attr_reader :book
 
-  def initialize(book_template = ChoicesBook)
-    @book = book_template.new
+  def initialize(book: "frog_book.yml")
+    @book = ChoicesBook.new(book)
   end
 
   def read
