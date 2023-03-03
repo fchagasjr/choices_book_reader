@@ -21,7 +21,7 @@ class ChoicesBookReader
   private
 
   def display_current_page
-    system("clear") unless input == TestInput
+    system("clear") unless testing?
     puts book.text
     build_menu
   end
@@ -37,6 +37,10 @@ class ChoicesBookReader
       puts "[#{option_letter}] #{option.upcase}"
     end
     puts "\n[x] EXIT"
+  end
+
+  def testing?
+    input == TestInput
   end
 end
 
