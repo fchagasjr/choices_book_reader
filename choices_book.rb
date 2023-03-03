@@ -25,12 +25,4 @@ class ChoicesBook
       page['options']
     end
   end
-
-  def build_menu
-    options.keys.each do |option|
-      option_letter = option[0].downcase
-      puts "[#{option_letter}] #{option.upcase}"
-    end
-    puts "\n[x] EXIT"
-  end
 end

@@ -22,12 +22,20 @@ class ChoicesBookReader
   def display_current_page
     system("clear")
     puts book.text
-    book.build_menu
+    build_menu
   end
 
   def get_user_choice
     options = book.options
     Input.get_option(options)
+  end
+
+  def build_menu
+    book.options.keys.each do |option|
+      option_letter = option[0].downcase
+      puts "[#{option_letter}] #{option.upcase}"
+    end
+    puts "\n[x] EXIT"
   end
 end
 
