@@ -10,16 +10,12 @@ class Input
   end
 
   def get_option
-    while true
+    output = nil
+    until output
       chosen_option = STDIN.getch
-      if available_options.keys.include?(chosen_option)
-        return available_options[chosen_option]
-
-      elsif chosen_option == "x"
-        system("clear")
-        exit
-      end
+      output = handle_output(chosen_option)
     end
+    output
   end
 
   private
@@ -28,6 +24,15 @@ class Input
     options.each_with_object({}) do |option, characters|
       option_letter = option.first[0].downcase
       characters[option_letter] = option.last
+    end
+  end
+
+  def handle_output(chosen_option)
+    if available_options.keys.include?(chosen_option)
+      available_options[chosen_option]
+    elsif chosen_option == "x"
+      system("clear")
+      exit
     end
   end
 end
