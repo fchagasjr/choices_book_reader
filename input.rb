@@ -3,10 +3,10 @@ class Input
 
   def self.get_option(options, test_mode = false)
     if test_mode
-      TestInput.new(options).get_option
+      AutoInput
     else
-      new(options).get_option
-    end
+      self
+    end.new(options).get_option
   end
 
   def initialize(options)
@@ -49,11 +49,10 @@ class Input
   end
 end
 
-class TestInput < Input
+class AutoInput < Input
   private
 
   def get_key
-    sleep(1)
     pressed_key = available_test_keys.sample
     puts "\nPressed key:[#{pressed_key}]\n\n"
     pressed_key
