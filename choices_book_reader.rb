@@ -3,11 +3,11 @@ require_relative 'input'
 require_relative 'choices_book'
 
 class ChoicesBookReader
-  attr_reader :book, :input
+  attr_reader :book, :test_mode
 
-  def initialize(book: "frog_book.yml", input: Input)
+  def initialize(book: "frog_book.yml", test_mode: false)
     @book = ChoicesBook.new(book)
-    @input = input
+    @test_mode = test_mode
   end
 
   def read
@@ -21,14 +21,14 @@ class ChoicesBookReader
   private
 
   def display_current_page
-    system("clear") unless testing?
+    system("clear") unless test_mode
     puts book.text
     build_menu
   end
 
   def get_user_choice
     options = book.options
-    input.get_option(options)
+    Input.get_option(options, test_mode)
   end
 
   def build_menu
@@ -38,12 +38,8 @@ class ChoicesBookReader
     end
     puts "\n[x] EXIT"
   end
-
-  def testing?
-    input == TestInput
-  end
 end
 
 if __FILE__==$0
-  ChoicesBookReader.new(input: TestInput).read
+  ChoicesBookReader.new(test_mode: true).read
 end
