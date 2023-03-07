@@ -64,9 +64,10 @@ class AutoInput < Input
   end
 
   def available_test_keys
-    "a".upto("z").to_a
-                 .sample(2)
-                 .append("x")
-                 .concat(available_options.keys)
+    "a".upto("z")
+       .to_a
+       .sample(2)
+       .append("x")
+       .concat(available_options.keys)
   end
 end
