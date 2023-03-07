@@ -2,15 +2,18 @@ require 'io/console'
 require_relative 'input'
 require_relative 'choices_book'
 require_relative 'page_clearer'
+require_relative 'input_key'
 
 class ChoicesBookReader
-  attr_reader :book, :input, :page_clearer
+  attr_reader :book, :input, :input_key, :page_clearer
 
   def initialize(book: "frog_book.yml",
                  input: Input,
+                 input_key: InputKey,
                  page_clearer: PageClearer)
     @book = ChoicesBook.new(book)
     @input = input
+    @input_key = input_key
     @page_clearer = page_clearer
   end
 
@@ -32,7 +35,7 @@ class ChoicesBookReader
 
   def get_user_choice
     options = book.options
-    input.get_option(options, page_clearer: page_clearer)
+    input.get_option(options, page_clearer: page_clearer, input_key: input_key)
   end
 
   def build_menu
