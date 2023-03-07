@@ -1,13 +1,17 @@
 require 'io/console'
 require_relative 'input'
 require_relative 'choices_book'
+require_relative 'page_clearer'
 
 class ChoicesBookReader
-  attr_reader :book, :test_mode
+  attr_reader :book, :test_mode, :page_clearer
 
-  def initialize(book: "frog_book.yml", test_mode: false)
+  def initialize(book: "frog_book.yml",
+                 test_mode: false,
+                 page_clearer: PageClearer)
     @book = ChoicesBook.new(book)
     @test_mode = test_mode
+    @page_clearer = page_clearer
   end
 
   def read
@@ -21,7 +25,7 @@ class ChoicesBookReader
   private
 
   def display_current_page
-    system("clear") unless test_mode
+    page_clearer.clear_page
     puts book.text
     build_menu
   end
