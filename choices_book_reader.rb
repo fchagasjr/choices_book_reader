@@ -39,7 +39,3 @@ class ChoicesBookReader
     puts "\n[x] EXIT"
   end
 end
-
-if __FILE__==$0
-  ChoicesBookReader.new(test_mode: true).read
-end
