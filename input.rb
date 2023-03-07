@@ -1,7 +1,7 @@
 require_relative 'page_clearer'
 
 class Input
-  attr_reader :available_options
+  attr_reader :available_options, :page_clearer
 
   def self.get_option(options, page_clearer: PageClearer)
     new(options, page_clearer: page_clearer).get_option
@@ -43,7 +43,7 @@ class Input
   end
 
   def exit_application
-    system("clear")
+    page_clearer.clear_page
     exit
   end
 end

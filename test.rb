@@ -10,11 +10,6 @@ class AutoInput < Input
     pressed_key
   end
 
-  def exit_application
-    puts "End of testing\nExiting application\n\n"
-    exit
-  end
-
   def available_test_keys
     "a".upto("z")
        .to_a
