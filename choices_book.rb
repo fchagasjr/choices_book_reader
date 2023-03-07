@@ -5,24 +5,20 @@ class ChoicesBook
 
   def initialize(book_file_path)
     @pages = YAML::Store.new(book_file_path)
-    @actual_page = 0
+    to_page(0)
   end
 
   def to_page(number)
-    @actual_page = number
+    pages.transaction do
+      @actual_page = pages[number]
+    end
   end
 
   def text
-    pages.transaction do
-      page = pages[actual_page]
-      page['text']
-    end
+    actual_page['text']
   end
 
   def options
-    pages.transaction do
-      page = pages[actual_page]
-      page['options']
-    end
+    actual_page['options']
   end
 end

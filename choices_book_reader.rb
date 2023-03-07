@@ -21,7 +21,7 @@ class ChoicesBookReader
     while true
       display_current_page
       next_page = get_user_choice
-      @book.to_page(next_page)
+      book.to_page(next_page)
     end
   end
 
