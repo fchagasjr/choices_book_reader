@@ -1,12 +1,8 @@
 class Input
   attr_reader :available_options
 
-  def self.get_option(options, test_mode = false)
-    if test_mode
-      AutoInput
-    else
-      self
-    end.new(options).get_option
+  def self.get_option(options)
+    new(options).get_option
   end
 
   def initialize(options)
@@ -49,25 +45,3 @@ class Input
   end
 end
 
-class AutoInput < Input
-  private
-
-  def get_key
-    pressed_key = available_test_keys.sample
-    puts "\nPressed key:[#{pressed_key}]\n\n"
-    pressed_key
-  end
-
-  def exit_application
-    puts "End of testing\nExiting application\n\n"
-    exit
-  end
-
-  def available_test_keys
-    "a".upto("z")
-       .to_a
-       .sample(2)
-       .append("x")
-       .concat(available_options.keys)
-  end
-end
