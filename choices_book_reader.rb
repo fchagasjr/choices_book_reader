@@ -32,7 +32,7 @@ class ChoicesBookReader
 
   def get_user_choice
     options = book.options
-    input.get_option(options)
+    input.get_option(options, page_clearer: page_clearer)
   end
 
   def build_menu

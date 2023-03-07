@@ -1,12 +1,15 @@
+require_relative 'page_clearer'
+
 class Input
   attr_reader :available_options
 
-  def self.get_option(options)
-    new(options).get_option
+  def self.get_option(options, page_clearer: PageClearer)
+    new(options, page_clearer: page_clearer).get_option
   end
 
-  def initialize(options)
+  def initialize(options, page_clearer: PageClearer)
     @available_options = handle_options(options)
+    @page_clearer = page_clearer
   end
 
   def get_option
