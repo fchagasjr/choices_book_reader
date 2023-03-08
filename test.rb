@@ -5,7 +5,7 @@ class AutoInput
   TEST_KEYS = %w[o y n x]
 
   def self.get_key
-    pressed_key = TEST_KEYS.shift
+    pressed_key = TEST_KEYS.sample
     puts "\nPressed key:[#{pressed_key}]\n\n"
     pressed_key
   end

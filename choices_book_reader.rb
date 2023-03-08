@@ -18,11 +18,12 @@ class ChoicesBookReader
   end
 
   def read
-    while true
+    while book.actual_page
       display_current_page
       page_option = get_user_choice
       book.to_option_page(page_option)
     end
+    page_clearer.clear_page
   end
 
   private
@@ -34,8 +35,8 @@ class ChoicesBookReader
   end
 
   def get_user_choice
-    options = book.options
-    input.get_option(options, page_clearer: page_clearer, input_key: input_key)
+    options = book.option_characters.append('x')
+    input.get_option(options, input_key: input_key)
   end
 
   def build_menu

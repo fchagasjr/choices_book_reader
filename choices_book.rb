@@ -26,9 +26,17 @@ class ChoicesBook
   end
 
   def to_option_page(chosen_option)
-    next_page =
-      options.find { |option| option.character == chosen_option}
-             .page
-    to_page(next_page)
+    if chosen_option == 'x'
+      @actual_page = nil
+    else
+      next_page =
+        options.find { |option| option.character == chosen_option}
+               .page
+      to_page(next_page)
+    end
+  end
+
+  def option_characters
+    options.map { |option| option.character }
   end
 end
