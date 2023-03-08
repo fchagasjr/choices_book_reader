@@ -10,8 +10,12 @@ class ChoicesBook
   end
 
   def to_page(number)
-    pages.transaction do
-      @actual_page = pages[number]
+    if number
+      pages.transaction do
+        @actual_page = pages[number]
+      end
+    else
+      @actual_page = nil
     end
   end
 
@@ -20,20 +24,17 @@ class ChoicesBook
   end
 
   def options
+    exit_option = PageOption.new('exit', nil, character: 'x')
     actual_page['options'].map do |text, page|
       PageOption.new(text, page)
-    end
+    end.append(exit_option)
   end
 
   def to_option_page(chosen_option)
-    if chosen_option == 'x'
-      @actual_page = nil
-    else
-      next_page =
-        options.find { |option| option.character == chosen_option}
-               .page
-      to_page(next_page)
-    end
+    next_page =
+      options.find { |option| option.character == chosen_option}
+             .page
+    to_page(next_page)
   end
 
   def option_characters
