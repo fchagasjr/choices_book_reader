@@ -41,7 +41,7 @@ class ChoicesBookReader
 
   def build_menu
     book.options.each do |option|
-      puts "\n" if option.page == nil
+      puts "\n" if option.page == nil # to segregate [x] EXIT
       puts "[#{option.character}] #{option.text}"
     end
   end
