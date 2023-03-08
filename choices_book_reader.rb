@@ -39,9 +39,8 @@ class ChoicesBookReader
   end
 
   def build_menu
-    book.options.keys.each do |option|
-      option_letter = option[0].downcase
-      puts "[#{option_letter}] #{option.upcase}"
+    book.options.each do |option|
+      puts "[#{option.character}] #{option.text}"
     end
     puts "\n[x] EXIT"
   end

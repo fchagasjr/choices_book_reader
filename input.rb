@@ -33,8 +33,8 @@ class Input
 
   def handle_options(options)
     options.each_with_object({}) do |option, characters|
-      option_letter = option.first[0].downcase
-      characters[option_letter] = option.last
+      option_letter = option.character
+      characters[option_letter] = option.page
     end
   end
 

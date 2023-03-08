@@ -1,4 +1,5 @@
 require 'yaml/store'
+require_relative 'page_option'
 
 class ChoicesBook
   attr_reader :actual_page, :pages
@@ -19,6 +20,8 @@ class ChoicesBook
   end
 
   def options
-    actual_page['options']
+    actual_page['options'].map do |text, page|
+      PageOption.new(text, page)
+    end
   end
 end
