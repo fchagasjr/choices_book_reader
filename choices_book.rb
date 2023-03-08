@@ -24,4 +24,11 @@ class ChoicesBook
       PageOption.new(text, page)
     end
   end
+
+  def to_option_page(chosen_option)
+    next_page =
+      options.find { |option| option.character == chosen_option}
+             .page
+    to_page(next_page)
+  end
 end

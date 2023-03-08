@@ -40,7 +40,7 @@ class Input
 
   def handle_output(chosen_option)
     if available_options.keys.include?(chosen_option)
-      available_options[chosen_option]
+      chosen_option
     elsif chosen_option == "x"
       exit_application
     end

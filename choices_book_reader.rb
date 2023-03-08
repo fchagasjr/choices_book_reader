@@ -20,8 +20,8 @@ class ChoicesBookReader
   def read
     while true
       display_current_page
-      next_page = get_user_choice
-      book.to_page(next_page)
+      page_option = get_user_choice
+      book.to_option_page(page_option)
     end
   end
 
