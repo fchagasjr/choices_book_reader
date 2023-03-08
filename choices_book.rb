@@ -24,7 +24,7 @@ class ChoicesBook
   end
 
   def options
-    exit_option = PageOption.new('exit', nil, character: 'x')
+    exit_option = PageOption.create_exit_option
     actual_page['options'].map do |text, page|
       PageOption.new(text, page)
     end.append(exit_option)
