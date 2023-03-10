@@ -17,4 +17,4 @@ class NullPageClearer
   end
 end
 
-ChoicesBookReader.new(input: Input, input_key: AutoInput, page_clearer: NullPageClearer).read
+ChoicesBookReader.new(input_key: AutoInput, page_clearer: NullPageClearer).read
