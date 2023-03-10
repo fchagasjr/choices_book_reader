@@ -12,7 +12,7 @@ class ChoicesBookReader
   end
 
   def read
-    while book.actual_page
+    while book.current_page
       display_current_page
       page_option = get_user_choice
       book.to_option_page(page_option)
