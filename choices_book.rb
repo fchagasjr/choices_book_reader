@@ -32,7 +32,7 @@ class ChoicesBook
 
   def to_option_page(chosen_option)
     next_page =
-      options.find { |option| option.character == chosen_option}
+      options.find { |option| option.character == chosen_option }
              .page
     to_page(next_page)
   end

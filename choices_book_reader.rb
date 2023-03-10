@@ -35,7 +35,7 @@ class ChoicesBookReader
   end
 
   def get_user_choice
-    options = book.option_characters.append('x')
+    options = book.option_characters
     input.get_option(options, input_key: input_key)
   end
 
