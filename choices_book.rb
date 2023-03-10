@@ -9,14 +9,12 @@ class ChoicesBook
     to_page(0)
   end
 
-  def to_page(number)
-    pages.transaction do
-      @current_page = number ? pages[number] : nil
-    end
-  end
-
   def text
     current_page['text']
+  end
+
+  def open?
+    !current_page.nil?
   end
 
   def options
@@ -36,5 +34,13 @@ class ChoicesBook
 
   def option_characters
     options.map { |option| option.character }
+  end
+
+  private
+
+  def to_page(number)
+    pages.transaction do
+      @current_page = number ? pages[number] : nil
+    end
   end
 end
