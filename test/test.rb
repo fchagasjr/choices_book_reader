@@ -1,5 +1,4 @@
-require_relative 'choices_book_reader'
-require_relative 'input'
+require_relative '../lib/choices_book_reader'
 
 class AutoInput
   TEST_KEYS = %w[o y n x]

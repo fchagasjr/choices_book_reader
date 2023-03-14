@@ -5,7 +5,7 @@ require_relative 'choices_book'
 class ChoicesBookReader
   attr_reader :book, :input, :page_clearer
 
-  def initialize(book: "frog_book.yml", input_key:, page_clearer:)
+  def initialize(book: "data/frog_book.yml", input_key:, page_clearer:)
     @book = ChoicesBook.new(book)
     @input = Input.new(input_key: input_key)
     @page_clearer = page_clearer

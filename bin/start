@@ -1,0 +1,7 @@
+#!/usr/bin/ruby
+
+require_relative '../lib/choices_book_reader'
+require_relative '../lib/page_clearer'
+require_relative '../lib/input_key'
+
+ChoicesBookReader.new(input_key: InputKey, page_clearer: PageClearer).read
