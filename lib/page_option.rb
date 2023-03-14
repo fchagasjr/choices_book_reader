@@ -1,7 +1,7 @@
 class PageOption
   attr_reader :character, :text, :page
 
-  def self.create_exit_option
+  def self.exit_option
     new('exit', character: 'x')
   end
 

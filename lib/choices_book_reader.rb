@@ -12,29 +12,31 @@ class ChoicesBookReader
   end
 
   def read
-    while book.open?
-      display_current_page
-      page_option = get_user_choice
-      book.to_option_page(page_option)
+    current_page = book.cover
+    while current_page
+      display(current_page)
+      page_option = get_user_choice(current_page)
+      page_number = current_page.option(page_option)
+      current_page = book.page(page_number)
     end
     page_clearer.clear_page
   end
 
   private
 
-  def display_current_page
+  def display(page)
     page_clearer.clear_page
-    puts book.text
-    build_menu
+    puts page.text
+    build_menu(page)
   end
 
-  def get_user_choice
-    options = book.option_characters
+  def get_user_choice(page)
+    options = page.option_characters
     input.get_option(options)
   end
 
-  def build_menu
-    book.options.each do |option|
+  def build_menu(page)
+    page.options.each do |option|
       puts "\n" if option.page == nil # to segregate [x] EXIT
       puts "[#{option.character}] #{option.text}"
     end
