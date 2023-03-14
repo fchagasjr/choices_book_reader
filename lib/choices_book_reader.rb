@@ -15,9 +15,8 @@ class ChoicesBookReader
     current_page = book.cover
     while current_page
       display(current_page)
-      page_option = get_user_choice(current_page)
-      page_number = current_page.option(page_option)
-      current_page = book.page(page_number)
+      next_page = get_user_choice(current_page)
+      current_page = book.page(next_page)
     end
     page_clearer.clear_page
   end
@@ -27,18 +26,12 @@ class ChoicesBookReader
   def display(page)
     page_clearer.clear_page
     puts page.text
-    build_menu(page)
+    puts page.menu
   end
 
   def get_user_choice(page)
     options = page.option_characters
-    input.get_option(options)
-  end
-
-  def build_menu(page)
-    page.options.each do |option|
-      puts "\n" if option.page == nil # to segregate [x] EXIT
-      puts "[#{option.character}] #{option.text}"
-    end
+    page_option = input.get_option(options)
+    page.option(page_option)
   end
 end
