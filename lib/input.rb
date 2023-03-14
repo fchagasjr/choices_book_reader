@@ -20,4 +20,3 @@ class Input
     options.find { |option| option == chosen_option}
   end
 end
-
