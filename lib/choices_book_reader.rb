@@ -32,6 +32,6 @@ class ChoicesBookReader
   def get_user_choice(page)
     options = page.option_characters
     page_option = input.get_option(options)
-    page.option(page_option)
+    page.option_page(page_option)
   end
 end

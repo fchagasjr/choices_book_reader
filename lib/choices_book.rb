@@ -9,7 +9,11 @@ class ChoicesBook
   end
 
   def cover
-    page(0)
+    cover_page =
+      pages.transaction do
+        pages.roots.first
+      end
+    page(cover_page)
   end
 
   def page(number)

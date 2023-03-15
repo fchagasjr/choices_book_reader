@@ -15,7 +15,7 @@ class ChoicesPage
     options.map { |option| option.character }
   end
 
-  def option(chosen_option)
+  def option_page(chosen_option)
     next_page = options
       .find { |option| option.character == chosen_option }
       .page
@@ -27,5 +27,4 @@ class ChoicesPage
       menu.concat("[#{option.character}] #{option.text}\n")
     end
   end
-
 end
