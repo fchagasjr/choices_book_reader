@@ -2,7 +2,7 @@ require 'yaml/store'
 require_relative 'choices_page'
 
 class ChoicesBook
-  attr_reader :current_page, :pages
+  attr_reader :pages
 
   def initialize(book_file_path)
     @pages = YAML::Store.new(book_file_path)
