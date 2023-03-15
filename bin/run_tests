@@ -1,7 +1,9 @@
 #!/bin/bash
 
+parent_path=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
+
 trap "echo Exited!; exit;" SIGINT SIGTERM
 
 while true; do
-  ag -g '\.rb$' | entr -c -d -p -s 'clear; ruby test/test.rb'
+  ag -g '\.rb$' "$parent_path/.." | entr -c -d -p -s "clear; ruby $parent_path/../test/test.rb"
 done

@@ -6,6 +6,7 @@ class ChoicesBookReader
   attr_reader :book, :input, :page_clearer
 
   def initialize(book: "data/frog_book.yml", input_key:, page_clearer:)
+    book = File.join(File.dirname(__FILE__), '..', book)
     @book = ChoicesBook.new(book)
     @input = Input.new(input_key: input_key)
     @page_clearer = page_clearer
